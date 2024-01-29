@@ -10,3 +10,4 @@ When working with a large digital collection, it can often be scattered with hun
 There may be times where you have to alter filenames in all subfolders. Python is very useful and flexible for this task. In this guide, we will show you how replace all instances of ‘foo’ in filenames with ‘bar’. For example, ‘foo_0001.jpg’ will be replaced by ‘bar_0001.jpg'.
 
 ## [Working with APIs](https://github.com/Digital-Preservation-Coalition/PythonStudyGroups/blob/main/Use%20Case%20-%20Working%20with%20apis.md)
+This guide is a walk-through on using the requests library to get data from a API. The guide will handle the basics of setting up a script to fetch data and some data manipulation.
