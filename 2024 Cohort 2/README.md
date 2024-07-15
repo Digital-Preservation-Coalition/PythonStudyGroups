@@ -1,1 +1,1 @@
-
+These folders are to allow study group participants to share their code. To be able to post code you will need to either post to this discussion thread to ask for write access to the repository, or fork the the repository to create a copy for your group. If you choose the second option, you can then submit a push request to have the code added to the main repository.
