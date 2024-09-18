@@ -1,0 +1,36 @@
+# Code to search for UK Postcodes in CSV file and return lines containing such into a new CSV results file
+# ChatGPT used to generate code
+
+import csv
+import re
+
+# Regular expression for UK postcodes
+postcode_regex = r'\b[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][ABD-HJLNP-UW-Z]{2}\b'
+
+# Function to check if a string contains a British postcode
+def contains_postcode(text):
+    return re.search(postcode_regex, text, re.IGNORECASE)
+
+# Function to read from the input CSV and write rows with postcodes to a new CSV
+def extract_postcodes(input_file, output_file):
+    with open(input_file, mode='r', newline='', encoding='utf-8') as infile, \
+         open(output_file, mode='w', newline='', encoding='utf-8') as outfile:
+        
+        # Create CSV reader and writer objects
+        reader = csv.reader(infile)
+        writer = csv.writer(outfile)
+
+        # Write the header to the new file (assuming the first row is a header)
+        header = next(reader)
+        writer.writerow(header)
+
+        # Process each row in the input CSV
+        for row in reader:
+            # Check each field in the row for a British postcode
+            if any(contains_postcode(field) for field in row):
+                writer.writerow(row)
+
+# Example usage
+input_csv = r'input.csv'   # Path to your input CSV
+output_csv = r'output.csv' # Path to your output CSV with postcode results
+extract_postcodes(input_csv, output_csv)
