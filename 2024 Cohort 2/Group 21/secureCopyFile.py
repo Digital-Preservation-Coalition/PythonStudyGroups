@@ -14,7 +14,7 @@ def check_file_has_data(file_path: str) -> bool:
     else:
         return False
 
-# Ch:wange these to test in your environment
+# Change these to test in your environment
 name_of_file_to_be_copied: str = 'myfile.txt'
 source_path: str = '/path/to/source/file/'
 destination_path: str = '/my/destination/folder/'
