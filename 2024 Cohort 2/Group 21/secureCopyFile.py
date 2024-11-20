@@ -15,11 +15,9 @@ def check_file_has_data(file_path: str) -> bool:
         return False
 
 # Change these to test in your environment
-#name_of_file_to_be_copied: str = 'myfile.txt'
-name_of_file_to_be_copied: str = 'secureCopyFile.py'
-#source_path: str = '/path/to/source/file/'
-source_path: str = './'
-destination_path: str = '/my/destination/folder/'
+name_of_file_to_be_copied: str = 'test_data1.txt'
+source_path: str = './test_data/'
+destination_path: str = './test_destination/'
 
 full_source_path = source_path + name_of_file_to_be_copied
 
@@ -37,3 +35,9 @@ else:
    print ('The file is empty. Exiting.\n')
    exit()
 
+# Step 3: check if deestination path exists
+if check_path_exists(destination_path):
+    print('Yes, the folder exists\n')
+else:
+    print('The folder does not exist. Exiting.\n')
+    exit()
