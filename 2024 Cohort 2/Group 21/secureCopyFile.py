@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
 import os.path
+import sys
+
+def get_script_directory():
+    return os.path.dirname(os.path.realpath((sys.argv[0])))
 
 def check_path_exists(path: str) -> bool:
     print('\n Checking for existence of "' + path + "'")
@@ -16,10 +20,12 @@ def check_file_has_data(file_path: str) -> bool:
 
 # Change these to test in your environment
 name_of_file_to_be_copied: str = 'test_data1.txt'
-source_path: str = './test_data/'
-destination_path: str = './test_destination/'
+source_path: str = get_script_directory() + '/test_data/'
+destination_path: str = get_script_directory() + '/test_destination/'
 
 full_source_path = source_path + name_of_file_to_be_copied
+
+print('The path where my test data is: ' + get_script_directory()  + '\n')
 
 # Step 1: check if the file exists
 if check_path_exists(full_source_path):
