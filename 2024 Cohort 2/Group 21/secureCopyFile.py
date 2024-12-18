@@ -2,6 +2,7 @@
 
 import os.path
 import sys
+import shutil
 
 def get_script_directory():
     return os.path.dirname(os.path.realpath((sys.argv[0])))
@@ -57,3 +58,20 @@ else:
     print('File does not already exist in destination folder\n')
 
 print('Ready to copy ' + full_source_path + ' to ' + full_destination_path + '.\n')
+
+# Step 5: copy source file to destination folder
+shutil.copy(full_source_path, full_destination_path)
+
+# Step 6: see if destination file now exists
+if check_path_exists(full_destination_path):
+    print('Destination file copied.\n')
+else:
+    print('Destination file NOT copied. Exiting.\n')
+
+# Step 7: check source and destination file sizes
+src_file_size = os.path.getsize(full_source_path)
+dest_file_size = os.path.getsize(full_destination_path)
+if (src_file_size == dest_file_size):
+    print('Source and destination files are the same size.  Copy successful.\n')
+else:
+    print('Source and destination file sizes are different.  Copy failed.\n')
