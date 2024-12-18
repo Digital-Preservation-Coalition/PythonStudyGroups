@@ -43,7 +43,7 @@ else:
 
 # Step 3: check if deestination path exists
 if check_path_exists(destination_path):
-    print('Yes, the folder exists\n')
+    print('Yes, the destination folder exists\n')
 else:
-    print('The folder does not exist. Exiting.\n')
+    print('The destination folder does not exist. Exiting.\n')
     exit()
