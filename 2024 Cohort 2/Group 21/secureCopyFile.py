@@ -54,4 +54,6 @@ if check_path_exists(full_destination_path):
     print('Destination file already exists. Exiting.\n')
     exit()
 else:
-    print('Destination file does not exist\n')
+    print('File does not already exist in destination folder\n')
+
+print('Ready to copy ' + full_source_path + ' to ' + full_destination_path + '.\n')
