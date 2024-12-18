@@ -24,6 +24,7 @@ source_path: str = get_script_directory() + '/test_data/'
 destination_path: str = get_script_directory() + '/test_destination/'
 
 full_source_path = source_path + name_of_file_to_be_copied
+full_destination_path = destination_path + name_of_file_to_be_copied
 
 print('The path where my test data is: ' + get_script_directory()  + '\n')
 
@@ -47,3 +48,10 @@ if check_path_exists(destination_path):
 else:
     print('The destination folder does not exist. Exiting.\n')
     exit()
+
+# Step 4: check if file already exists
+if check_path_exists(full_destination_path):
+    print('Destination file already exists. Exiting.\n')
+    exit()
+else:
+    print('Destination file does not exist\n')
